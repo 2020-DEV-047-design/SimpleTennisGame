@@ -11,5 +11,6 @@ package com.game.tennis.util;
 public interface TennisGameConstants {
 	
 	String SCORE_LOVE = "LOVE";
+	String SCORE_FIFTEEN = "FIFTEEN";
 	
 }
