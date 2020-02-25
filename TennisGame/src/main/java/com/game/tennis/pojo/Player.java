@@ -7,8 +7,20 @@ package com.game.tennis.pojo;
  */
 public class Player {
 	
+	private String name;
 	private int points;
 
+	public Player(String playerName) {
+		this.name = playerName;
+	}
+
+	/**
+	 * Returns the player's name
+	 */
+	public String getName() {
+		return name;
+	}
+	
 	/**
 	 * Returns points stored in a player's bucket
 	 */
