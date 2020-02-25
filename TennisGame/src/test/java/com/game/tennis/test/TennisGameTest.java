@@ -70,6 +70,16 @@ public class TennisGameTest {
 		assertEquals(TennisGameConstants.PLAYER_1_NAME + TennisGameConstants.WON, tennisMatch.getScore());
 	}
 	
+
+	/**
+	 * Test case for Player2 as winner
+	 */
+	@Test
+	public void testGetScoreWhenPlayer2Wins() {
+		addScore(1,3);
+		assertEquals(TennisGameConstants.PLAYER_2_NAME + TennisGameConstants.WON, tennisMatch.getScore());
+	}
+	
 	/**
 	 * Adds score to respective player's bucket in a repeated mode
 	 * 
