@@ -58,7 +58,9 @@ public class TennisGame {
 	public String getScore() {
 		if(Math.abs(player1.getPoints() - player2.getPoints()) >= 2)
 			return getLeadingScorer().getName() + TennisGameConstants.WON;
-		else 
+		else if (player1.getPoints() == 3 && player2.getPoints() == 3)
+			return TennisGameConstants.PLAYERS_ARE + TennisGameConstants.DEUCE;
+		else
 			return null;
 	}
 
