@@ -15,5 +15,8 @@ public interface TennisGameConstants {
 	String SCORE_THIRTY = "THIRTY";
 	String SCORE_FORTY = "FORTY";
 	String INVALID_SCORE_POINT = "Invalid Score Point:";
+	String WON = " won";
+	String PLAYER_1_NAME = "Player_1";
+	String PLAYER_2_NAME = "Player_2";
 	
 }
