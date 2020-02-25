@@ -19,14 +19,14 @@ import com.game.tennis.util.TennisGameConstants;
 
 public class TennisGameTest {
 
-	TennisGame tennisGame, tennisMatch;
-	Player player1, player2;
+	private TennisGame tennisGame, tennisMatch;
+	private Player player1, player2;
 
 	@Before
 	public void Setup() {
 		tennisGame = new TennisGame(null, null);
-		player1 = new Player();
-		player2 = new Player();
+		player1 = new Player(TennisGameConstants.PLAYER_1_NAME);
+		player2 = new Player(TennisGameConstants.PLAYER_2_NAME);
 		tennisMatch = new TennisGame(player1, player2);
 	}
 
@@ -55,10 +55,33 @@ public class TennisGameTest {
 	 * Test case to add points scored by a player to his/her account
 	 */
 	@Test
-	public void testaddScorePointForPointsOfPlayers() {
+	public void testAddScorePointForPointsOfPlayers() {
 		tennisGame.addScorePoint(player1); // when point is added one time into player1's account 
 		assertEquals(1, player1.getPoints());
 		assertEquals(0, player2.getPoints());// when no point has been added to player2's account
 	}
 
+	/**
+	 * Test case for Player1 as winner
+	 */
+	@Test
+	public void testGetScoreWhenPlayer1Wins() {
+		addScore(3,1);
+		assertEquals(TennisGameConstants.PLAYER_1_NAME + TennisGameConstants.WON, tennisMatch.getScore());
+	}
+	
+	/**
+	 * Adds score to respective player's bucket in a repeated mode
+	 * 
+	 * @param player_1_score
+	 *            - An int data type
+	 * @param player_2_score
+	 *            - An int data type
+	 */
+	void addScore(final int player_1_score, final int player_2_score){
+		for (int i=0; i < player_1_score; i++)
+			tennisMatch.addScorePoint(player1);
+		for (int i=0; i < player_2_score; i++)
+			tennisMatch.addScorePoint(player2);
+	}
 }
