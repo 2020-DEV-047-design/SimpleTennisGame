@@ -57,7 +57,9 @@ public class TennisGame {
 	 */
 	public String getScore() {
 		if (player1.getPoints() >= 3 && player2.getPoints() >= 3) {
-            if (player1.getPoints() == player2.getPoints()) {
+            if (Math.abs(player2.getPoints() - player1.getPoints()) >= 2) {
+            	return getLeadingScorer().getName() + TennisGameConstants.WON;
+            } else if (player1.getPoints() == player2.getPoints()) {
             	return TennisGameConstants.PLAYERS_ARE + TennisGameConstants.DEUCE;
             } else {
             	return getLeadingScorer().getName() + TennisGameConstants.HAS + TennisGameConstants.ADVANTAGE;
