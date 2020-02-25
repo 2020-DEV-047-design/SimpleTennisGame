@@ -136,6 +136,24 @@ public class TennisGameTest {
 	}
 	
 	/**
+	 * Test case for unequal scores of players when the leading scorer has max score below 3 points
+	 */
+	@Test
+	public void testGetScoreForUnequalScoresOfPlayersWithMaxPointBelow3_case1() {
+		addScore(1,2);
+		assertEquals(TennisGameConstants.PLAYER_1_NAME + TennisGameConstants.HAS + TennisGameConstants.SCORE_FIFTEEN + TennisGameConstants.PLAYER_2_NAME + TennisGameConstants.HAS + TennisGameConstants.SCORE_THIRTY, tennisMatch.getScore());		
+	}
+	
+	/**
+	 * Test case for unequal scores of players when the leading scorer has max score below 3 points
+	 */
+	@Test
+	public void testGetScoreForUnequalScoresOfPlayersWithMaxPointBelow3_case2() {
+		addScore(0,2);
+		assertEquals(TennisGameConstants.PLAYER_1_NAME + TennisGameConstants.HAS + TennisGameConstants.SCORE_LOVE + TennisGameConstants.PLAYER_2_NAME + TennisGameConstants.HAS + TennisGameConstants.SCORE_THIRTY, tennisMatch.getScore());		
+	}
+	
+	/**
 	 * Adds score to respective player's bucket in a repeated mode
 	 * 
 	 * @param player_1_score
