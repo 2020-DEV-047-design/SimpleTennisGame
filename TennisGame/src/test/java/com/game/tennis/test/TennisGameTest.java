@@ -80,6 +80,15 @@ public class TennisGameTest {
 	}
 	
 	/**
+	 * Test case for Player2 as winner after he/she gets the advantage point 
+	 */
+	@Test
+	public void testGetScoreWhenPlayer2WinsAfterGettingAdvantagePoint() {
+		addScore(3,5);
+		assertEquals(TennisGameConstants.PLAYER_2_NAME + TennisGameConstants.WON, tennisMatch.getScore());
+	}
+	
+	/**
 	 * Test case for deuce
 	 */
 	@Test
