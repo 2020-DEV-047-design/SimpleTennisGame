@@ -109,12 +109,30 @@ public class TennisGameTest {
 	}
 	
 	/**
-	 * Test case for equal scores of players when they have point less or equal to 2
+	 * Test case for equal scores of players when they have equal to 2
 	 */
 	@Test
-	public void testGetScoreForEqualScoresOfPlayers() {
+	public void testGetScoreForEqualScoresOfPlayersWithPoints2() {
 		addScore(2,2);
-		assertEquals(TennisGameConstants.PLAYERS_ARE + TennisGameConstants.SCORE_THIRTY + TennisGameConstants.ALL, tennisMatch.getScore());
+		assertEquals(TennisGameConstants.PLAYERS_ARE + TennisGameConstants.SCORE_THIRTY + TennisGameConstants.ALL, tennisMatch.getScore());		
+	}
+	
+	/**
+	 * Test case for equal scores of players when they have point equal to 1
+	 */
+	@Test
+	public void testGetScoreForEqualScoresOfPlayersWithPoints1() {
+		addScore(1,1);
+		assertEquals(TennisGameConstants.PLAYERS_ARE + TennisGameConstants.SCORE_FIFTEEN + TennisGameConstants.ALL, tennisMatch.getScore());		
+	}
+	
+	/**
+	 * Test case for equal scores of players when they have point equal to 0
+	 */
+	@Test
+	public void testGetScoreForEqualScoresOfPlayersWithPoints0() {
+		addScore(0,0);
+		assertEquals(TennisGameConstants.PLAYERS_ARE + TennisGameConstants.SCORE_LOVE + TennisGameConstants.ALL, tennisMatch.getScore());		
 	}
 	
 	/**
