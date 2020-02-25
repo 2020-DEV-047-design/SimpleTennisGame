@@ -1,5 +1,6 @@
 package com.game.tennis;
 
+import com.game.tennis.exception.InvalidScoreException;
 import com.game.tennis.util.TennisGameConstants;
 
 /**
@@ -16,8 +17,9 @@ public class TennisGame {
 	 * 
 	 * @param point
 	 *            - A int data type
+	 * @throws InvalidScoreException 
 	 */
-	public String getScoreDesc(final int point) {
+	public String getScoreDesc(final int point){
 		switch (point) {
 		case 0:
 			return TennisGameConstants.SCORE_LOVE;
@@ -27,7 +29,8 @@ public class TennisGame {
 			return TennisGameConstants.SCORE_THIRTY;
 		case 3:
 			return TennisGameConstants.SCORE_FORTY;
+		default:
+				throw new InvalidScoreException(TennisGameConstants.INVALID_SCORE_POINT + point);
 		}
-		return null;
 	}
 }
