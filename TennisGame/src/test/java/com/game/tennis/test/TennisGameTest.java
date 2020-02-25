@@ -28,8 +28,9 @@ public class TennisGameTest {
 	 * points{0,1,2,3} These values correspond to {LOVE,FIFTEEN,THIRTY,FORTY}
 	 */
 	@Test
-	public void testScoreDescForLove_Fifteen() {		 
+	public void testScoreDescForLove_Fifteen_Thirty() {		 
 		assertEquals(TennisGameConstants.SCORE_LOVE, tennisGame.getScoreDesc(0));
 		assertEquals(TennisGameConstants.SCORE_FIFTEEN, tennisGame.getScoreDesc(1));
+		assertEquals(TennisGameConstants.SCORE_THIRTY, tennisGame.getScoreDesc(2));
 	}
 }
