@@ -56,13 +56,17 @@ public class TennisGame {
 	 * Returns the score status of the players
 	 */
 	public String getScore() {
-		if ((player1.getPoints() >= 4 || player2.getPoints() >= 4)
-				&& Math.abs(player1.getPoints() - player2.getPoints()) >= 2)
-			return getLeadingScorer().getName() + TennisGameConstants.WON;
-		else if (player1.getPoints() == player2.getPoints() && player1.getPoints() >= 3)
-			return TennisGameConstants.PLAYERS_ARE + TennisGameConstants.DEUCE;
-		else
-			return null;
+		if (player1.getPoints() >= 3 && player2.getPoints() >= 3) {
+            if (player1.getPoints() == player2.getPoints()) {
+            	return TennisGameConstants.PLAYERS_ARE + TennisGameConstants.DEUCE;
+            } else {
+            	return getLeadingScorer().getName() + TennisGameConstants.HAS + TennisGameConstants.ADVANTAGE;
+            }
+        } else {
+        	if((player1.getPoints() == 4 || player2.getPoints() == 4 ) && (Math.abs(player1.getPoints() - player2.getPoints()) >= 2))
+            	return getLeadingScorer().getName() + TennisGameConstants.WON;
+        }
+		return null;
 	}
 
 	/**
