@@ -109,6 +109,15 @@ public class TennisGameTest {
 	}
 	
 	/**
+	 * Test case for equal scores of players when they have point less or equal to 2
+	 */
+	@Test
+	public void testGetScoreForEqualScoresOfPlayers() {
+		addScore(2,2);
+		assertEquals(TennisGameConstants.PLAYERS_ARE + TennisGameConstants.SCORE_THIRTY + TennisGameConstants.ALL, tennisMatch.getScore());
+	}
+	
+	/**
 	 * Adds score to respective player's bucket in a repeated mode
 	 * 
 	 * @param player_1_score
