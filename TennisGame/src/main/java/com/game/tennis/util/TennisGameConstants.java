@@ -13,5 +13,6 @@ public interface TennisGameConstants {
 	String SCORE_LOVE = "LOVE";
 	String SCORE_FIFTEEN = "FIFTEEN";
 	String SCORE_THIRTY = "THIRTY";
+	String SCORE_FORTY = "FORTY";
 	
 }
