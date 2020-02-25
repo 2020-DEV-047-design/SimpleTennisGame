@@ -21,6 +21,8 @@ public class TennisGame {
 		switch (point) {
 		case 0:
 			return TennisGameConstants.SCORE_LOVE;
+		case 1:
+			return TennisGameConstants.SCORE_FIFTEEN;
 		}
 		return null;
 	}
