@@ -67,6 +67,8 @@ public class TennisGame {
         } else {
         	if((player1.getPoints() == 4 || player2.getPoints() == 4 ) && (Math.abs(player1.getPoints() - player2.getPoints()) >= 2))
             	return getLeadingScorer().getName() + TennisGameConstants.WON;
+        	else if (player1.getPoints() == player2.getPoints())
+        		return TennisGameConstants.PLAYERS_ARE + getScoreDesc(player1.getPoints()) + TennisGameConstants.ALL;
         }
 		return null;
 	}
