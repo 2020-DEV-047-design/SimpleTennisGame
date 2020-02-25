@@ -13,7 +13,7 @@ import com.game.tennis.util.TennisGameConstants;
 public class TennisGame {
 
 	Player player1, player2;
-	
+
 	public TennisGame(Player player1, Player player2) {
 		this.player1 = player1;
 		this.player2 = player2;
@@ -25,9 +25,9 @@ public class TennisGame {
 	 * 
 	 * @param point
 	 *            - A int data type
-	 * @throws InvalidScoreException 
+	 * @throws InvalidScoreException
 	 */
-	public String getScoreDesc(final int point){
+	public String getScoreDesc(final int point) {
 		switch (point) {
 		case 0:
 			return TennisGameConstants.SCORE_LOVE;
@@ -38,7 +38,7 @@ public class TennisGame {
 		case 3:
 			return TennisGameConstants.SCORE_FORTY;
 		default:
-				throw new InvalidScoreException(TennisGameConstants.INVALID_SCORE_POINT + point);
+			throw new InvalidScoreException(TennisGameConstants.INVALID_SCORE_POINT + point);
 		}
 	}
 
@@ -53,22 +53,23 @@ public class TennisGame {
 	}
 
 	/**
-	 * Returns the score status of the players 
+	 * Returns the score status of the players
 	 */
 	public String getScore() {
-		if(Math.abs(player1.getPoints() - player2.getPoints()) >= 2)
+		if ((player1.getPoints() >= 4 || player2.getPoints() >= 4)
+				&& Math.abs(player1.getPoints() - player2.getPoints()) >= 2)
 			return getLeadingScorer().getName() + TennisGameConstants.WON;
-		else if (player1.getPoints() == 3 && player2.getPoints() == 3)
+		else if (player1.getPoints() == player2.getPoints() && player1.getPoints() >= 3)
 			return TennisGameConstants.PLAYERS_ARE + TennisGameConstants.DEUCE;
 		else
 			return null;
 	}
 
 	/**
-	 * Returns the player with highest score 
+	 * Returns the player with highest score
 	 */
 	private Player getLeadingScorer() {
 		return player1.getPoints() > player2.getPoints() ? player1 : player2;
 	}
-	
+
 }
