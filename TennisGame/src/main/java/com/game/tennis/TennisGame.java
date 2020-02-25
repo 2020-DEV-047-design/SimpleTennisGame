@@ -56,10 +56,17 @@ public class TennisGame {
 	 * Returns the score status of the players 
 	 */
 	public String getScore() {
-		if(player1.getPoints() - player2.getPoints() >= 2)
-			return TennisGameConstants.PLAYER_1_NAME + TennisGameConstants.WON;
+		if(Math.abs(player1.getPoints() - player2.getPoints()) >= 2)
+			return getLeadingScorer().getName() + TennisGameConstants.WON;
 		else 
 			return null;
+	}
+
+	/**
+	 * Returns the player with highest score 
+	 */
+	private Player getLeadingScorer() {
+		return player1.getPoints() > player2.getPoints() ? player1 : player2;
 	}
 	
 }
