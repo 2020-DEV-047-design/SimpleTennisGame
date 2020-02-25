@@ -66,7 +66,7 @@ public class TennisGameTest {
 	 */
 	@Test
 	public void testGetScoreWhenPlayer1Wins() {
-		addScore(3,1);
+		addScore(4,1);
 		assertEquals(TennisGameConstants.PLAYER_1_NAME + TennisGameConstants.WON, tennisMatch.getScore());
 	}
 	
@@ -74,8 +74,8 @@ public class TennisGameTest {
 	 * Test case for Player2 as winner
 	 */
 	@Test
-	public void testGetScoreWhenPlayer2Wins_case1() {
-		addScore(1,3);
+	public void testGetScoreWhenPlayer2Wins() {
+		addScore(1,4);
 		assertEquals(TennisGameConstants.PLAYER_2_NAME + TennisGameConstants.WON, tennisMatch.getScore());
 	}
 	
@@ -85,6 +85,8 @@ public class TennisGameTest {
 	@Test
 	public void testGetScoreForDeuce() {
 		addScore(3,3);
+		assertEquals(TennisGameConstants.PLAYERS_ARE + TennisGameConstants.DEUCE, tennisMatch.getScore());
+		addScore(4,4);
 		assertEquals(TennisGameConstants.PLAYERS_ARE + TennisGameConstants.DEUCE, tennisMatch.getScore());
 	}
 	
