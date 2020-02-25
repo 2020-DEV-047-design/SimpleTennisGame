@@ -1,6 +1,7 @@
 package com.game.tennis;
 
 import com.game.tennis.exception.InvalidScoreException;
+import com.game.tennis.pojo.Player;
 import com.game.tennis.util.TennisGameConstants;
 
 /**
@@ -10,6 +11,13 @@ import com.game.tennis.util.TennisGameConstants;
  *
  */
 public class TennisGame {
+
+	Player player1, player2;
+	
+	public TennisGame(Player player1, Player player2) {
+		this.player1 = player1;
+		this.player2 = player2;
+	}
 
 	/**
 	 * Returns scoreDesc of a player's points{0,1,2,3} These values respectively
@@ -32,5 +40,15 @@ public class TennisGame {
 		default:
 				throw new InvalidScoreException(TennisGameConstants.INVALID_SCORE_POINT + point);
 		}
+	}
+
+	/**
+	 * Adds points to respective player's bucket
+	 * 
+	 * @param player
+	 *            - A Player data type
+	 */
+	public void addScorePoint(Player player) {
+		player.setPoints(player.getPoints() + 1);
 	}
 }
