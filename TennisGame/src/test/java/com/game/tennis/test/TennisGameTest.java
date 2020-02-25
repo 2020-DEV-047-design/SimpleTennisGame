@@ -91,6 +91,15 @@ public class TennisGameTest {
 	}
 	
 	/**
+	 * Test case for advantage
+	 */
+	@Test
+	public void testGetScoreForAdvantageForPlayer2() {
+		addScore(3,4);
+		assertEquals(TennisGameConstants.PLAYER_2_NAME + TennisGameConstants.HAS + TennisGameConstants.ADVANTAGE, tennisMatch.getScore());
+	}
+	
+	/**
 	 * Adds score to respective player's bucket in a repeated mode
 	 * 
 	 * @param player_1_score
