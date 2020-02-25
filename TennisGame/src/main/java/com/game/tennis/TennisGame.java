@@ -25,6 +25,8 @@ public class TennisGame {
 			return TennisGameConstants.SCORE_FIFTEEN;
 		case 2:
 			return TennisGameConstants.SCORE_THIRTY;
+		case 3:
+			return TennisGameConstants.SCORE_FORTY;
 		}
 		return null;
 	}
