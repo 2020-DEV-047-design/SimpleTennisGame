@@ -22,5 +22,6 @@ public interface TennisGameConstants {
 	String PLAYERS_ARE = "Players are ";
 	String ADVANTAGE = "Advantage";
 	String HAS = " has ";
+	String ALL = "All";
 	
 }
