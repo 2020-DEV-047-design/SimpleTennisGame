@@ -32,5 +32,6 @@ public class TennisGameTest {
 		assertEquals(TennisGameConstants.SCORE_LOVE, tennisGame.getScoreDesc(0));
 		assertEquals(TennisGameConstants.SCORE_FIFTEEN, tennisGame.getScoreDesc(1));
 		assertEquals(TennisGameConstants.SCORE_THIRTY, tennisGame.getScoreDesc(2));
+		assertEquals(TennisGameConstants.SCORE_FORTY, tennisGame.getScoreDesc(3));
 	}
 }
