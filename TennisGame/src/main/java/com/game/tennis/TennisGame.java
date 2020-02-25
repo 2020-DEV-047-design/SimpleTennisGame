@@ -48,7 +48,18 @@ public class TennisGame {
 	 * @param player
 	 *            - A Player data type
 	 */
-	public void addScorePoint(Player player) {
+	public void addScorePoint(final Player player) {
 		player.setPoints(player.getPoints() + 1);
 	}
+
+	/**
+	 * Returns the score status of the players 
+	 */
+	public String getScore() {
+		if(player1.getPoints() - player2.getPoints() >= 2)
+			return TennisGameConstants.PLAYER_1_NAME + TennisGameConstants.WON;
+		else 
+			return null;
+	}
+	
 }
